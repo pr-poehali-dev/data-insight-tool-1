@@ -172,14 +172,14 @@ export default function ProductsSection() {
                 } else {
                   toast({
                     title: 'Ошибка',
-                    description: result.error || 'Не удалось отправить заявку.',
+                    description: result.error || 'Попробуйте позвонить нам.',
                     variant: 'destructive',
                   });
                 }
               } catch (error) {
                 toast({
-                  title: 'Ошибка соединения',
-                  description: 'Проверьте интернет или позвоните нам.',
+                  title: 'Ошибка',
+                  description: 'Попробуйте позвонить нам: +7 (992) 029-44-44',
                   variant: 'destructive',
                 });
               } finally {
