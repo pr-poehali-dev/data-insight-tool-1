@@ -59,7 +59,7 @@ export default function Index() {
           <div className="flex justify-between items-center">
             <a href="/" className="flex items-center">
               <img 
-                src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/bucket/bf020442-abe8-438c-a06a-ccd1f6b9281b.jpeg" 
+                src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/bucket/63017d72-f0fc-43be-bc97-95dd7c64213c.png" 
                 alt="БазаУпаковки" 
                 className="h-10 sm:h-12 md:h-14 w-auto object-contain" 
               />
