@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import InputMask from 'react-input-mask';
 
 export default function ProductsSection() {
   const { toast } = useToast();
@@ -186,7 +187,8 @@ export default function ProductsSection() {
               }
             }}
           >
-            <input
+            <InputMask
+              mask="+7 (999) 999-99-99"
               type="tel"
               name="phone"
               required
