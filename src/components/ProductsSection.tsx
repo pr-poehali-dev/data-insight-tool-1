@@ -161,21 +161,20 @@ export default function ProductsSection() {
                   body: JSON.stringify(data),
                 });
 
-                const result = await response.json();
-
-                if (response.ok) {
-                  toast({
-                    title: 'Заявка отправлена!',
-                    description: 'Мы перезвоним вам в ближайшее время.',
-                  });
-                  e.currentTarget.reset();
-                } else {
+                if (!response.ok) {
                   toast({
                     title: 'Ошибка',
-                    description: result.error || 'Попробуйте позвонить нам.',
+                    description: 'Попробуйте позвонить нам.',
                     variant: 'destructive',
                   });
+                  return;
                 }
+
+                toast({
+                  title: 'Заявка отправлена!',
+                  description: 'Мы перезвоним вам в ближайшее время.',
+                });
+                e.currentTarget.reset();
               } catch (error) {
                 toast({
                   title: 'Ошибка',
