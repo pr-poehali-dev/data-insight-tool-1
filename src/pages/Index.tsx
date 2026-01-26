@@ -88,51 +88,51 @@ export default function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 md:px-8 container mx-auto">
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-12 md:col-span-7 mb-8 md:mb-0">
-            <h1 className="text-4xl sm:text-6xl md:text-9xl font-bold tracking-tighter leading-none mb-6">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 md:px-8 container mx-auto">
+        <div className="grid grid-cols-12 gap-4 md:gap-8">
+          <div className="col-span-12 md:col-span-7 mb-6 md:mb-0">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter leading-none mb-4 sm:mb-6">
               УПАКОВКА
               <br />
               ДЛЯ БИЗНЕСА
             </h1>
-            <p className="text-base sm:text-lg md:text-xl max-w-xl mb-8">
+            <p className="text-sm xs:text-base sm:text-lg md:text-xl max-w-xl mb-6 sm:mb-8">
               Стретч. Скотч. Коробки. Надёжные упаковочные материалы для маркетплейсов, складов и логистики. Качество, которое защищает ваш товар.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col xs:flex-row gap-3 sm:gap-4">
               <a 
                 href="#contact" 
-                className="inline-block px-8 py-4 bg-[#4d7c3f] text-white text-sm uppercase tracking-widest hover:bg-[#d4772f] transition-colors text-center"
+                className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-[#4d7c3f] text-white text-xs sm:text-sm uppercase tracking-wider sm:tracking-widest hover:bg-[#d4772f] transition-colors text-center"
               >
                 Получить прайс-лист
               </a>
               <a 
                 href="#products" 
-                className="inline-block px-8 py-4 border-2 border-[#4d7c3f] text-[#4d7c3f] text-sm uppercase tracking-widest hover:bg-[#4d7c3f] hover:text-white transition-colors text-center"
+                className="inline-block px-6 sm:px-8 py-3 sm:py-4 border-2 border-[#4d7c3f] text-[#4d7c3f] text-xs sm:text-sm uppercase tracking-wider sm:tracking-widest hover:bg-[#4d7c3f] hover:text-white transition-colors text-center"
               >
                 Наша продукция
               </a>
             </div>
           </div>
           <div className="col-span-12 md:col-span-5 flex items-center justify-center">
-            <div className="relative w-full aspect-square overflow-hidden rounded-sm">
+            <div className="relative w-full max-w-md md:max-w-none aspect-square overflow-hidden rounded-sm">
               <img 
                 src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/files/1edc3352-f6f6-4de1-9ce4-3c65c89ca5f3.jpg" 
                 alt="Склад упаковочных материалов" 
                 className="w-full h-full object-cover"
               />
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#d4772f] opacity-90"></div>
+              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 w-16 h-16 sm:w-24 sm:h-24 bg-[#d4772f] opacity-90"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Work Section */}
-      <section id="products" className="py-20 px-4 md:px-8 bg-[#4d7c3f] text-white">
+      <section id="products" className="py-12 sm:py-16 md:py-20 px-4 md:px-8 bg-[#4d7c3f] text-white">
         <div className="container mx-auto">
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tighter mb-8 md:mb-12">ПРОДУКЦИЯ</h2>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6 sm:mb-8 md:mb-12">ПРОДУКЦИЯ</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Product 1 */}
             <div className="group">
               <div className="aspect-square bg-white mb-4 overflow-hidden">
@@ -176,11 +176,11 @@ export default function Index() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4 md:px-8">
+      <section id="about" className="py-12 sm:py-16 md:py-20 px-4 md:px-8">
         <div className="container mx-auto">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 md:col-span-5">
-              <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tighter mb-6 md:mb-8">О КОМПАНИИ</h2>
+              <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-4 sm:mb-6 md:mb-8">О КОМПАНИИ</h2>
               <div className="aspect-[4/5] bg-neutral-100 relative mb-8 md:mb-0">
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 border-2 border-[#4d7c3f]"></div>
               </div>
@@ -221,11 +221,11 @@ export default function Index() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 md:px-8 bg-[#d4772f] text-white">
+      <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 md:px-8 bg-[#d4772f] text-white">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             <div>
-              <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tighter mb-6 md:mb-8">КОНТАКТЫ</h2>
+              <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-4 sm:mb-6 md:mb-8">КОНТАКТЫ</h2>
               <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8">Нужна упаковка для вашего бизнеса? Оставьте заявку — рассчитаем стоимость и сроки.</p>
               <div className="space-y-4">
                 <p className="flex flex-col sm:flex-row sm:items-center gap-2">
