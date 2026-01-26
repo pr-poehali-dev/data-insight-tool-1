@@ -242,7 +242,7 @@ export default function Index() {
                 </p>
                 <p className="flex flex-col sm:flex-row sm:items-center gap-2">
                   <span className="w-24 text-xs sm:text-sm uppercase tracking-widest">Адрес</span>
-                  <span className="text-sm sm:text-base">Производство и склад в Московской области</span>
+                  <span className="text-sm sm:text-base">Республика Башкортостан, г. Уфа, ул. Менделеева д. 177, 5 эт.</span>
                 </p>
               </div>
             </div>
