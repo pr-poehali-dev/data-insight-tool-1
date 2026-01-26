@@ -230,14 +230,14 @@ export default function Index() {
               <div className="space-y-4">
                 <p className="flex flex-col sm:flex-row sm:items-center gap-2">
                   <span className="w-24 text-xs sm:text-sm uppercase tracking-widest">Почта</span>
-                  <a href="mailto:order@upakovkapro.ru" className="hover:underline">
-                    order@upakovkapro.ru
+                  <a href="mailto:info@bazaupak.ru" className="hover:underline">
+                    info@bazaupak.ru
                   </a>
                 </p>
                 <p className="flex flex-col sm:flex-row sm:items-center gap-2">
                   <span className="w-24 text-xs sm:text-sm uppercase tracking-widest">Телефон</span>
-                  <a href="tel:+78001234567" className="hover:underline">
-                    +7 (800) 123-45-67
+                  <a href="tel:+79920294444" className="hover:underline">
+                    +7 (992) 029-44-44
                   </a>
                 </p>
                 <p className="flex flex-col sm:flex-row sm:items-center gap-2">

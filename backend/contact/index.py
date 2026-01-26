@@ -47,7 +47,7 @@ def handler(event: dict, context) -> dict:
                 'body': json.dumps({'error': 'Заполните все поля'})
             }
         
-        recipient_email = os.environ.get('RECIPIENT_EMAIL', 'order@upakovkapro.ru')
+        recipient_email = os.environ.get('RECIPIENT_EMAIL', 'info@bazaupak.ru')
         smtp_server = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
         smtp_port = int(os.environ.get('SMTP_PORT', '587'))
         smtp_user = os.environ.get('SMTP_USER')
