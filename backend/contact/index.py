@@ -152,13 +152,13 @@ def handler(event: dict, context) -> dict:
         
         try:
             send_telegram_notification(company, contact, message)
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"Telegram error (ignored): {e}")
         
         try:
             send_email_notification(company, contact, message)
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"Email error (ignored): {e}")
         
         return {
             'statusCode': 200,
