@@ -190,7 +190,7 @@ export default function Index() {
                 <div className="group w-[280px] sm:w-[320px] lg:w-auto flex-shrink-0">
                   <div className="aspect-square bg-white mb-4 overflow-hidden">
                     <img 
-                      src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/files/3cd526d9-6846-4ad3-b2ff-0d6e332ac09c.jpg" 
+                      src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/files/b6e2f005-bc1c-4d1a-a267-e179cca946ca.jpg" 
                       alt="Пузырчатая пленка" 
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
