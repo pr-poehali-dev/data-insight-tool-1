@@ -49,8 +49,13 @@ export default function Index() {
             </p>
           </div>
           <div className="col-span-12 md:col-span-5 flex items-center justify-center">
-            <div className="relative w-full aspect-square bg-[#4d7c3f]">
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#d4772f]"></div>
+            <div className="relative w-full aspect-square overflow-hidden rounded-sm">
+              <img 
+                src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/files/1edc3352-f6f6-4de1-9ce4-3c65c89ca5f3.jpg" 
+                alt="Склад упаковочных материалов" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#d4772f] opacity-90"></div>
             </div>
           </div>
         </div>
