@@ -1,3 +1,7 @@
-# data-insight-tool-1
+# GRIDFORM - Дизайн-студия
 
-Initial repository setup for pr-poehali-dev/data-insight-tool-1
+![Preview](https://cdn.poehali.dev/templates/gridform/preview-ru.jpg)
+
+Лендинг для дизайн-студии в стиле швейцарского минимализма. Строгая типографика, модульные сетки, контрастные цвета (черный, белый, красный). Включает секции: герой с крупной типографикой, портфолио работ, информация о студии и принципах работы, контактная форма.
+
+`"tags": ["agency", "light", "brutalist", "portfolio", "creative"]`
