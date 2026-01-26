@@ -7,7 +7,7 @@ export default function Navigation() {
             <img 
               src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/bucket/63017d72-f0fc-43be-bc97-95dd7c64213c.png" 
               alt="БазаУпаковки" 
-              className="h-14 sm:h-16 md:h-18 w-auto object-contain" 
+              className="h-16 sm:h-20 md:h-22 w-auto object-contain" 
             />
           </a>
           <div className="hidden md:flex space-x-8">
