@@ -1,5 +1,4 @@
-import { forwardRef } from 'react';
-import { IMaskInput } from 'react-imask';
+import InputMask from 'react-input-mask';
 
 interface PhoneInputProps {
   name: string;
@@ -8,18 +7,15 @@ interface PhoneInputProps {
   className?: string;
 }
 
-const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>((props, ref) => {
+export default function PhoneInput({ name, required, placeholder, className }: PhoneInputProps) {
   return (
-    <IMaskInput
-      {...props}
-      mask="+7 (000) 000-00-00"
-      unmask={false}
-      inputRef={ref}
+    <InputMask
+      mask="+7 (999) 999-99-99"
       type="tel"
+      name={name}
+      required={required}
+      placeholder={placeholder || "+7 (___) ___-__-__"}
+      className={className}
     />
   );
-});
-
-PhoneInput.displayName = 'PhoneInput';
-
-export default PhoneInput;
+}
