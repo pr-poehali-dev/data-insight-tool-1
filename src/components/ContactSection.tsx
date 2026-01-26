@@ -11,9 +11,21 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
+    const phone = formData.get('phone') as string;
+
+    if (!phone || phone.length < 10) {
+      toast({
+        title: 'Ошибка',
+        description: 'Введите корректный номер телефона',
+        variant: 'destructive',
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
     const data = {
       company: 'Заявка с сайта',
-      contact: formData.get('phone') as string,
+      contact: phone,
       message: 'Заявка на обратный звонок',
     };
 
@@ -26,25 +38,22 @@ export default function ContactSection() {
         body: JSON.stringify(data),
       });
 
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const result = await response.json();
 
-      if (response.ok) {
-        toast({
-          title: 'Заявка отправлена!',
-          description: result.message || 'Мы свяжемся с вами в ближайшее время.',
-        });
-        e.currentTarget.reset();
-      } else {
-        toast({
-          title: 'Ошибка',
-          description: result.error || 'Не удалось отправить заявку. Попробуйте позвонить нам.',
-          variant: 'destructive',
-        });
-      }
-    } catch (error) {
       toast({
-        title: 'Ошибка соединения',
-        description: 'Проверьте интернет или позвоните нам по телефону.',
+        title: 'Заявка отправлена!',
+        description: result.message || 'Мы свяжемся с вами в ближайшее время.',
+      });
+      e.currentTarget.reset();
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: 'Ошибка',
+        description: 'Не удалось отправить заявку. Позвоните нам: +7 (992) 029-44-44',
         variant: 'destructive',
       });
     } finally {
