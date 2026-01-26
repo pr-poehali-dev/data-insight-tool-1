@@ -101,7 +101,7 @@ export default function Index() {
             <p className="text-sm xs:text-base sm:text-lg md:text-xl max-w-xl mb-6 sm:mb-8">
               Стретч. Скотч. Коробки. Надёжные упаковочные материалы для маркетплейсов, складов и логистики. Доставка по Уфе за 4 часа.
             </p>
-            <div className="flex flex-col xs:flex-row gap-3 sm:gap-4">
+            <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 mb-8 sm:mb-10">
               <a 
                 href="#contact" 
                 className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-[#4d7c3f] text-white text-xs sm:text-sm uppercase tracking-wider sm:tracking-widest hover:bg-[#d4772f] transition-colors text-center"
@@ -114,6 +114,30 @@ export default function Index() {
               >
                 Наша продукция
               </a>
+            </div>
+            
+            <div className="grid grid-cols-1 xs:grid-cols-3 gap-4 sm:gap-6 max-w-2xl">
+              <div className="flex items-start gap-3">
+                <div className="text-[#d4772f] text-2xl">⚡</div>
+                <div>
+                  <h3 className="font-bold text-sm sm:text-base mb-1">Быстрая доставка</h3>
+                  <p className="text-xs sm:text-sm text-neutral-600">За 4 часа по Уфе</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d4772f] text-2xl">📦</div>
+                <div>
+                  <h3 className="font-bold text-sm sm:text-base mb-1">Всегда в наличии</h3>
+                  <p className="text-xs sm:text-sm text-neutral-600">Склад в Уфе</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d4772f] text-2xl">💰</div>
+                <div>
+                  <h3 className="font-bold text-sm sm:text-base mb-1">Оптовые цены</h3>
+                  <p className="text-xs sm:text-sm text-neutral-600">От производителя</p>
+                </div>
+              </div>
             </div>
           </div>
           <div className="col-span-12 md:col-span-5 flex items-center justify-center">
