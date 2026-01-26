@@ -38,17 +38,27 @@ export default function ContactSection() {
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      let result;
+      try {
+        result = await response.json();
+      } catch (jsonError) {
+        console.error('JSON parse error:', jsonError);
+        result = {};
       }
 
-      const result = await response.json();
-
-      toast({
-        title: 'Заявка отправлена!',
-        description: result.message || 'Мы свяжемся с вами в ближайшее время.',
-      });
-      e.currentTarget.reset();
+      if (response.ok) {
+        toast({
+          title: 'Заявка отправлена!',
+          description: result.message || 'Мы свяжемся с вами в ближайшее время.',
+        });
+        e.currentTarget.reset();
+      } else {
+        toast({
+          title: 'Ошибка',
+          description: result.error || 'Не удалось отправить заявку. Позвоните нам: +7 (992) 029-44-44',
+          variant: 'destructive',
+        });
+      }
     } catch (error) {
       console.error('Form submission error:', error);
       toast({
