@@ -183,13 +183,17 @@ export default function Index() {
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 md:col-span-5">
               <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-4 sm:mb-6 md:mb-8">О КОМПАНИИ</h2>
-              <div className="aspect-[4/5] bg-neutral-100 relative mb-8 md:mb-0">
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 border-2 border-[#4d7c3f]"></div>
+              <div className="aspect-[4/5] bg-neutral-100 relative mb-8 md:mb-0 flex items-center justify-center">
+                <img 
+                  src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/bucket/63017d72-f0fc-43be-bc97-95dd7c64213c.png" 
+                  alt="БазаУпаковки логотип" 
+                  className="w-3/4 h-auto object-contain"
+                />
               </div>
             </div>
             <div className="col-span-12 md:col-span-7 md:pt-24">
               <p className="text-base sm:text-lg md:text-xl mb-6">
-                УПАКОВКА PRO — производитель и поставщик упаковочных материалов для бизнеса. Мы понимаем, что надежная упаковка — это защита товара, скорость логистики и доверие клиентов.
+                БазаУпаковки — производитель и поставщик упаковочных материалов для бизнеса. Мы понимаем, что надежная упаковка — это защита товара, скорость логистики и доверие клиентов.
               </p>
               <p className="mb-6">
                 Наши клиенты — селлеры на маркетплейсах, фулфилмент-центры, склады, транспортные и производственные компании. Мы работаем с теми, кому важны качество, стабильность поставок и гибкость под задачи.
