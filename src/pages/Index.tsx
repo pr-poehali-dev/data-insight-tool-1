@@ -303,15 +303,15 @@ export default function Index() {
       {/* Footer */}
       <footer className="py-8 px-4 md:px-8 bg-black text-white">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm mb-4 md:mb-0">2025 GRIDFORM Studio. Все права защищены.</p>
+          <p className="text-sm mb-4 md:mb-0">© 2025 БазаУпаковки. Все права защищены.</p>
           <div className="flex space-x-8">
-            <a href="#" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
+            <a href="#" className="text-sm uppercase tracking-widest hover:text-[#d4772f] transition-colors">
               Instagram
             </a>
-            <a href="#" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
-              Behance
+            <a href="#" className="text-sm uppercase tracking-widest hover:text-[#d4772f] transition-colors">
+              VK
             </a>
-            <a href="#" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
+            <a href="#" className="text-sm uppercase tracking-widest hover:text-[#d4772f] transition-colors">
               Telegram
             </a>
           </div>
