@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import { IMaskInput } from 'react-imask';
+import PhoneInput from '@/components/ui/phone-input';
 
 export default function ContactSection() {
   const { toast } = useToast();
@@ -82,9 +82,7 @@ export default function ContactSection() {
           <div>
             <p className="text-base sm:text-lg mb-6">Оставьте номер — перезвоним за 5 минут</p>
             <form className="flex flex-col sm:flex-row gap-3 sm:gap-4" onSubmit={handleSubmit}>
-              <IMaskInput
-                mask="+7 (000) 000-00-00"
-                type="tel"
+              <PhoneInput
                 name="phone"
                 required
                 placeholder="+7 (___) ___-__-__"

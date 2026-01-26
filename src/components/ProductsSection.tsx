@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import { IMaskInput } from 'react-imask';
+import PhoneInput from '@/components/ui/phone-input';
 
 export default function ProductsSection() {
   const { toast } = useToast();
@@ -187,9 +187,7 @@ export default function ProductsSection() {
               }
             }}
           >
-            <IMaskInput
-              mask="+7 (000) 000-00-00"
-              type="tel"
+            <PhoneInput
               name="phone"
               required
               placeholder="+7 (___) ___-__-__"
