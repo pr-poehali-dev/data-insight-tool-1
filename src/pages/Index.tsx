@@ -243,7 +243,7 @@ export default function Index() {
                 <div className="group w-[280px] sm:w-[320px] lg:w-auto flex-shrink-0">
                   <div className="aspect-square bg-white mb-4 overflow-hidden">
                     <img 
-                      src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/files/4763c1f9-b5b1-4158-b00f-9d3b19570c1b.jpg" 
+                      src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/files/d8e3f2d3-25b4-4349-ac79-1807d6c96b63.jpg" 
                       alt="Армированный скотч" 
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
