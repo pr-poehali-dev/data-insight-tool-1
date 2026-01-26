@@ -1,10 +1,37 @@
 import json
 import os
 import psycopg2
+import urllib.request
+import urllib.parse
+
+
+def send_telegram_notification(company: str, contact: str, message: str):
+    bot_token = os.environ.get('TELEGRAM_BOT_TOKEN')
+    chat_id = os.environ.get('TELEGRAM_CHAT_ID')
+    
+    if not bot_token or not chat_id:
+        return
+    
+    text = f"""🔔 Новая заявка с сайта БазаУпаковки
+
+🏢 Компания: {company}
+📞 Контакты: {contact}
+💬 Запрос:
+{message}"""
+    
+    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+    data = urllib.parse.urlencode({
+        'chat_id': chat_id,
+        'text': text,
+        'parse_mode': 'HTML'
+    }).encode('utf-8')
+    
+    req = urllib.request.Request(url, data=data)
+    urllib.request.urlopen(req, timeout=5)
 
 
 def handler(event: dict, context) -> dict:
-    '''Обработка заявок с контактной формы и сохранение в базу данных'''
+    '''Обработка заявок с контактной формы, сохранение в БД и отправка в Telegram'''
     
     method = event.get('httpMethod', 'GET')
     
@@ -68,6 +95,11 @@ def handler(event: dict, context) -> dict:
         conn.commit()
         cursor.close()
         conn.close()
+        
+        try:
+            send_telegram_notification(company, contact, message)
+        except Exception:
+            pass
         
         return {
             'statusCode': 200,
