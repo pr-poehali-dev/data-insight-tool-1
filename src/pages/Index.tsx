@@ -223,9 +223,10 @@ export default function Index() {
       {/* Contact Section */}
       <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 md:px-8 bg-[#d4772f] text-white">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6 sm:mb-8 md:mb-12">КОНТАКТЫ</h2>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mb-8 md:mb-12">
             <div>
-              <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-4 sm:mb-6 md:mb-8">КОНТАКТЫ</h2>
               <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8">Нужна упаковка для вашего бизнеса? Оставьте заявку — рассчитаем стоимость и сроки.</p>
               <div className="space-y-4">
                 <p className="flex flex-col sm:flex-row sm:items-center gap-2">
@@ -296,6 +297,18 @@ export default function Index() {
                 </button>
               </form>
             </div>
+          </div>
+
+          {/* Map */}
+          <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] bg-white/10 rounded-sm overflow-hidden">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3A8e3c5a4f8b9d2c1a0f7e6d5c4b3a2918&amp;source=constructor"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              title="Карта офиса БазаУпаковки"
+              className="w-full h-full"
+            ></iframe>
           </div>
         </div>
       </section>
