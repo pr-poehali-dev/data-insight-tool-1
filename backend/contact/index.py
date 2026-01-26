@@ -3,6 +3,9 @@ import os
 import psycopg2
 import urllib.request
 import urllib.parse
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 
 def send_telegram_notification(company: str, contact: str, message: str):
@@ -30,8 +33,55 @@ def send_telegram_notification(company: str, contact: str, message: str):
     urllib.request.urlopen(req, timeout=5)
 
 
+def send_email_notification(company: str, contact: str, message: str):
+    smtp_server = os.environ.get('SMTP_SERVER')
+    smtp_port = os.environ.get('SMTP_PORT')
+    smtp_password = os.environ.get('SMTP_PASSWORD')
+    from_email = os.environ.get('SMTP_FROM_EMAIL')
+    to_email = os.environ.get('SMTP_TO_EMAIL')
+    
+    if not all([smtp_server, smtp_port, smtp_password, from_email, to_email]):
+        return
+    
+    msg = MIMEMultipart('alternative')
+    msg['Subject'] = f'Новая заявка с сайта БазаУпаковки'
+    msg['From'] = from_email
+    msg['To'] = to_email
+    
+    html = f"""
+    <html>
+      <body style="font-family: Arial, sans-serif; color: #333;">
+        <h2 style="color: #d4772f;">🔔 Новая заявка с сайта</h2>
+        <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
+          <tr>
+            <td style="padding: 10px; border-bottom: 1px solid #ddd; font-weight: bold; width: 120px;">Компания:</td>
+            <td style="padding: 10px; border-bottom: 1px solid #ddd;">{company}</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; border-bottom: 1px solid #ddd; font-weight: bold;">Контакты:</td>
+            <td style="padding: 10px; border-bottom: 1px solid #ddd;">{contact}</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; font-weight: bold; vertical-align: top;">Запрос:</td>
+            <td style="padding: 10px;">{message}</td>
+          </tr>
+        </table>
+        <p style="margin-top: 20px; color: #666; font-size: 12px;">Это автоматическое уведомление с сайта bazaupak.ru</p>
+      </body>
+    </html>
+    """
+    
+    part = MIMEText(html, 'html', 'utf-8')
+    msg.attach(part)
+    
+    with smtplib.SMTP(smtp_server, int(smtp_port)) as server:
+        server.starttls()
+        server.login(from_email, smtp_password)
+        server.send_message(msg)
+
+
 def handler(event: dict, context) -> dict:
-    '''Обработка заявок с контактной формы, сохранение в БД и отправка в Telegram'''
+    '''Обработка заявок с контактной формы, сохранение в БД и отправка в Telegram и на почту'''
     
     method = event.get('httpMethod', 'GET')
     
@@ -102,6 +152,11 @@ def handler(event: dict, context) -> dict:
         
         try:
             send_telegram_notification(company, contact, message)
+        except Exception:
+            pass
+        
+        try:
+            send_email_notification(company, contact, message)
         except Exception:
             pass
         
