@@ -96,8 +96,13 @@ export default function Index() {
               <br />
               ДЛЯ БИЗНЕСА
             </h1>
+            <div className="bg-[#4d7c3f] text-white px-4 sm:px-6 py-3 sm:py-4 inline-block mb-6 sm:mb-8">
+              <p className="text-base xs:text-lg sm:text-xl md:text-2xl font-bold">
+                Доставка за 4 часа по Уфе
+              </p>
+            </div>
             <p className="text-sm xs:text-base sm:text-lg md:text-xl max-w-xl mb-6 sm:mb-8">
-              Стретч. Скотч. Коробки. Надёжные упаковочные материалы для маркетплейсов, складов и логистики. Качество, которое защищает ваш товар.
+              Стретч. Скотч. Коробки. Надёжные упаковочные материалы для маркетплейсов, складов и логистики. Всегда в наличии на нашем складе.
             </p>
             <div className="flex flex-col xs:flex-row gap-3 sm:gap-4">
               <a 
