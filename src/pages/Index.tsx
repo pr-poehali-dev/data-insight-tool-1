@@ -2,27 +2,27 @@ export default function Index() {
   return (
     <main className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b border-black">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b border-[#4d7c3f]">
         <div className="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
-          <a href="/" className="text-base md:text-xl font-bold tracking-tighter">
-            УПАКОВКА PRO
+          <a href="/" className="flex items-center gap-3">
+            <img src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/bucket/bf020442-abe8-438c-a06a-ccd1f6b9281b.jpeg" alt="БазаУпаковки" className="h-8 md:h-10" />
           </a>
           <div className="hidden md:flex space-x-8">
-            <a href="#products" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
+            <a href="#products" className="text-sm uppercase tracking-widest hover:text-[#d4772f] transition-colors">
               Продукция
             </a>
-            <a href="#about" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
+            <a href="#about" className="text-sm uppercase tracking-widest hover:text-[#d4772f] transition-colors">
               О компании
             </a>
-            <a href="#contact" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
+            <a href="#contact" className="text-sm uppercase tracking-widest hover:text-[#d4772f] transition-colors">
               Контакты
             </a>
           </div>
           <div className="md:hidden flex flex-col space-y-1">
-            <a href="#products" className="text-xs uppercase tracking-widest hover:text-red-600 transition-colors">
+            <a href="#products" className="text-xs uppercase tracking-widest hover:text-[#d4772f] transition-colors">
               Продукция
             </a>
-            <a href="#contact" className="text-xs uppercase tracking-widest hover:text-red-600 transition-colors">
+            <a href="#contact" className="text-xs uppercase tracking-widest hover:text-[#d4772f] transition-colors">
               Контакты
             </a>
           </div>
@@ -43,15 +43,15 @@ export default function Index() {
             </p>
           </div>
           <div className="col-span-12 md:col-span-5 flex items-center justify-center">
-            <div className="relative w-full aspect-square bg-red-600">
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-black"></div>
+            <div className="relative w-full aspect-square bg-[#4d7c3f]">
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#d4772f]"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Work Section */}
-      <section id="products" className="py-20 px-4 md:px-8 bg-black text-white">
+      <section id="products" className="py-20 px-4 md:px-8 bg-[#4d7c3f] text-white">
         <div className="container mx-auto">
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tighter mb-8 md:mb-12">ПРОДУКЦИЯ</h2>
 
@@ -59,7 +59,7 @@ export default function Index() {
             {/* Product 1 */}
             <div className="group">
               <div className="aspect-square bg-white mb-4 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center bg-neutral-100 group-hover:bg-red-600 transition-colors duration-300">
+                <div className="w-full h-full flex items-center justify-center bg-neutral-100 group-hover:bg-[#d4772f] transition-colors duration-300">
                   <span className="text-black text-8xl font-bold">01</span>
                 </div>
               </div>
@@ -70,7 +70,7 @@ export default function Index() {
             {/* Product 2 */}
             <div className="group">
               <div className="aspect-square bg-white mb-4 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center bg-neutral-100 group-hover:bg-red-600 transition-colors duration-300">
+                <div className="w-full h-full flex items-center justify-center bg-neutral-100 group-hover:bg-[#d4772f] transition-colors duration-300">
                   <span className="text-black text-8xl font-bold">02</span>
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default function Index() {
             {/* Product 3 */}
             <div className="group">
               <div className="aspect-square bg-white mb-4 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center bg-neutral-100 group-hover:bg-red-600 transition-colors duration-300">
+                <div className="w-full h-full flex items-center justify-center bg-neutral-100 group-hover:bg-[#d4772f] transition-colors duration-300">
                   <span className="text-black text-8xl font-bold">03</span>
                 </div>
               </div>
@@ -99,7 +99,7 @@ export default function Index() {
             <div className="col-span-12 md:col-span-5">
               <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tighter mb-6 md:mb-8">О КОМПАНИИ</h2>
               <div className="aspect-[4/5] bg-neutral-100 relative mb-8 md:mb-0">
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 border-2 border-black"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 border-2 border-[#4d7c3f]"></div>
               </div>
             </div>
             <div className="col-span-12 md:col-span-7 md:pt-24">
@@ -138,7 +138,7 @@ export default function Index() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 md:px-8 bg-red-600 text-white">
+      <section id="contact" className="py-20 px-4 md:px-8 bg-[#d4772f] text-white">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
@@ -172,7 +172,7 @@ export default function Index() {
                   <input
                     type="text"
                     id="name"
-                    className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black placeholder-white/50"
+                    className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-[#4d7c3f] placeholder-white/50"
                     placeholder="Название вашей компании"
                   />
                 </div>
@@ -183,7 +183,7 @@ export default function Index() {
                   <input
                     type="email"
                     id="email"
-                    className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black placeholder-white/50"
+                    className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-[#4d7c3f] placeholder-white/50"
                     placeholder="Email или телефон"
                   />
                 </div>
@@ -194,13 +194,13 @@ export default function Index() {
                   <textarea
                     id="message"
                     rows={4}
-                    className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black placeholder-white/50"
+                    className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-[#4d7c3f] placeholder-white/50"
                     placeholder="Опишите задачу: что нужно, объёмы, сроки"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="mt-8 px-8 py-3 bg-black text-white text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors"
+                  className="mt-8 px-8 py-3 bg-[#4d7c3f] text-white text-sm uppercase tracking-widest hover:bg-white hover:text-[#4d7c3f] transition-colors"
                 >
                   Получить расчёт
                 </button>
