@@ -4,11 +4,11 @@ export default function HeroSection() {
       <div className="grid grid-cols-12 gap-4 md:gap-8">
         <div className="col-span-12 md:col-span-7 mb-6 md:mb-0">
           <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-none mb-4 sm:mb-6">
-            УПАКОВКА
+            МАГАЗИН-СКЛАД
             <br />
-            ДЛЯ БИЗНЕСА
+            УПАКОВОЧНЫХ
             <br />
-            <span className="text-[#d4772f]">ЗА 4 ЧАСА</span>
+            <span className="text-[#d4772f]">МАТЕРИАЛОВ</span>
           </h1>
           <p className="text-sm xs:text-base sm:text-lg md:text-xl max-w-xl mb-6 sm:mb-8">
             Стретч. Скотч. Коробки. Надёжные упаковочные материалы для маркетплейсов, складов и логистики. Доставка по Уфе за 4 часа.
