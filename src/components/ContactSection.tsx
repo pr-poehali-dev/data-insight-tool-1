@@ -1,0 +1,139 @@
+import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
+
+export default function ContactSection() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      company: formData.get('company') as string,
+      contact: formData.get('contact') as string,
+      message: formData.get('message') as string,
+    };
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/bbfa06f8-eaaa-4af2-b609-1566130b6067', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: 'Заявка отправлена!',
+          description: result.message || 'Мы свяжемся с вами в ближайшее время.',
+        });
+        e.currentTarget.reset();
+      } else {
+        toast({
+          title: 'Ошибка',
+          description: result.error || 'Не удалось отправить заявку. Попробуйте позвонить нам.',
+          variant: 'destructive',
+        });
+      }
+    } catch (error) {
+      toast({
+        title: 'Ошибка соединения',
+        description: 'Проверьте интернет или позвоните нам по телефону.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 md:px-8 bg-[#d4772f] text-white">
+      <div className="container mx-auto">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6 sm:mb-8 md:mb-12">КОНТАКТЫ</h2>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mb-8 md:mb-12">
+          <div>
+            <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8">Нужна упаковка для вашего бизнеса? Оставьте заявку — рассчитаем стоимость и сроки.</p>
+            <div className="space-y-4">
+              <p className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <span className="w-24 text-xs sm:text-sm uppercase tracking-widest">Почта</span>
+                <a href="mailto:info@bazaupak.ru" className="hover:underline">
+                  info@bazaupak.ru
+                </a>
+              </p>
+              <p className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <span className="w-24 text-xs sm:text-sm uppercase tracking-widest">Телефон</span>
+                <a href="tel:+79920294444" className="hover:underline">
+                  +7 (992) 029-44-44
+                </a>
+              </p>
+              <p className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <span className="w-24 text-xs sm:text-sm uppercase tracking-widest">Адрес</span>
+                <span className="text-sm sm:text-base">Республика Башкортостан, г. Уфа, ул. Менделеева д. 177, 5 эт.</span>
+              </p>
+            </div>
+          </div>
+          <div>
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              <div>
+                <label htmlFor="company" className="block text-sm uppercase tracking-widest mb-2">
+                  Компания *
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  required
+                  placeholder="ООО «Ваша компания»"
+                  className="w-full px-4 py-3 bg-white text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-white"
+                />
+              </div>
+              <div>
+                <label htmlFor="contact" className="block text-sm uppercase tracking-widest mb-2">
+                  Контакты *
+                </label>
+                <input
+                  type="text"
+                  id="contact"
+                  name="contact"
+                  required
+                  placeholder="Email или телефон"
+                  className="w-full px-4 py-3 bg-white text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-white"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm uppercase tracking-widest mb-2">
+                  Запрос *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={4}
+                  placeholder="Опишите что нужно: объёмы, упаковочные материалы, сроки"
+                  className="w-full px-4 py-3 bg-white text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-white resize-none"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full px-8 py-4 bg-[#4d7c3f] text-white text-sm uppercase tracking-widest hover:bg-white hover:text-[#4d7c3f] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div className="text-center pt-8 md:pt-12 border-t border-white/20">
+          <p className="text-xs sm:text-sm text-white/80">© 2025 БазаУпаковки. Упаковочные материалы для бизнеса.</p>
+        </div>
+      </div>
+    </section>
+  );
+}
