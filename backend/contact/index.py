@@ -43,7 +43,8 @@ def handler(event: dict, context) -> dict:
                 'Access-Control-Allow-Methods': 'POST, OPTIONS',
                 'Access-Control-Allow-Headers': 'Content-Type'
             },
-            'body': ''
+            'body': '',
+            'isBase64Encoded': False
         }
     
     if method != 'POST':
@@ -53,7 +54,8 @@ def handler(event: dict, context) -> dict:
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*'
             },
-            'body': json.dumps({'error': 'Method not allowed'})
+            'body': json.dumps({'error': 'Method not allowed'}),
+            'isBase64Encoded': False
         }
     
     try:
@@ -69,7 +71,8 @@ def handler(event: dict, context) -> dict:
                     'Content-Type': 'application/json',
                     'Access-Control-Allow-Origin': '*'
                 },
-                'body': json.dumps({'error': 'Заполните все поля'})
+                'body': json.dumps({'error': 'Заполните все поля'}),
+                'isBase64Encoded': False
             }
         
         database_url = os.environ.get('DATABASE_URL')
@@ -81,7 +84,8 @@ def handler(event: dict, context) -> dict:
                     'Content-Type': 'application/json',
                     'Access-Control-Allow-Origin': '*'
                 },
-                'body': json.dumps({'error': 'База данных не настроена'})
+                'body': json.dumps({'error': 'База данных не настроена'}),
+                'isBase64Encoded': False
             }
         
         conn = psycopg2.connect(database_url)
@@ -110,7 +114,8 @@ def handler(event: dict, context) -> dict:
             'body': json.dumps({
                 'success': True,
                 'message': 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.'
-            })
+            }),
+            'isBase64Encoded': False
         }
         
     except json.JSONDecodeError:
@@ -120,7 +125,8 @@ def handler(event: dict, context) -> dict:
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*'
             },
-            'body': json.dumps({'error': 'Некорректный формат данных'})
+            'body': json.dumps({'error': 'Некорректный формат данных'}),
+            'isBase64Encoded': False
         }
     except Exception as e:
         return {
@@ -129,5 +135,6 @@ def handler(event: dict, context) -> dict:
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*'
             },
-            'body': json.dumps({'error': f'Ошибка сервера: {str(e)}'})
+            'body': json.dumps({'error': f'Ошибка сервера: {str(e)}'}),
+            'isBase64Encoded': False
         }
