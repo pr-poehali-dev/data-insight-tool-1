@@ -1,4 +1,56 @@
+import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
+
 export default function Index() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      company: formData.get('company') as string,
+      contact: formData.get('contact') as string,
+      message: formData.get('message') as string,
+    };
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/bbfa06f8-eaaa-4af2-b609-1566130b6067', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: 'Заявка отправлена!',
+          description: result.message || 'Мы свяжемся с вами в ближайшее время.',
+        });
+        e.currentTarget.reset();
+      } else {
+        toast({
+          title: 'Ошибка',
+          description: result.error || 'Не удалось отправить заявку. Попробуйте позвонить нам.',
+          variant: 'destructive',
+        });
+      }
+    } catch (error) {
+      toast({
+        title: 'Ошибка соединения',
+        description: 'Проверьте интернет или позвоните нам по телефону.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-white">
       {/* Navigation */}
@@ -195,25 +247,29 @@ export default function Index() {
               </div>
             </div>
             <div>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
-                  <label htmlFor="name" className="block text-sm uppercase tracking-widest mb-2">
+                  <label htmlFor="company" className="block text-sm uppercase tracking-widest mb-2">
                     Компания
                   </label>
                   <input
                     type="text"
-                    id="name"
+                    id="company"
+                    name="company"
+                    required
                     className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-[#4d7c3f] placeholder-white/50"
                     placeholder="Название вашей компании"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm uppercase tracking-widest mb-2">
+                  <label htmlFor="contact" className="block text-sm uppercase tracking-widest mb-2">
                     Контакты
                   </label>
                   <input
-                    type="email"
-                    id="email"
+                    type="text"
+                    id="contact"
+                    name="contact"
+                    required
                     className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-[#4d7c3f] placeholder-white/50"
                     placeholder="Email или телефон"
                   />
@@ -224,16 +280,19 @@ export default function Index() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={4}
+                    required
                     className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-[#4d7c3f] placeholder-white/50"
                     placeholder="Опишите задачу: что нужно, объёмы, сроки"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="mt-8 px-8 py-3 bg-[#4d7c3f] text-white text-sm uppercase tracking-widest hover:bg-white hover:text-[#4d7c3f] transition-colors"
+                  disabled={isSubmitting}
+                  className="mt-8 px-8 py-3 bg-[#4d7c3f] text-white text-sm uppercase tracking-widest hover:bg-white hover:text-[#4d7c3f] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Получить расчёт
+                  {isSubmitting ? 'Отправка...' : 'Получить расчёт'}
                 </button>
               </form>
             </div>

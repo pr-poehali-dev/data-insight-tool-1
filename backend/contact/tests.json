@@ -1,0 +1,30 @@
+{
+  "tests": [
+    {
+      "name": "Successful form submission",
+      "method": "POST",
+      "body": {
+        "company": "Test Company",
+        "contact": "test@example.com",
+        "message": "Need packaging materials"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Missing required fields",
+      "method": "POST",
+      "body": {
+        "company": "Test Company"
+      },
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
