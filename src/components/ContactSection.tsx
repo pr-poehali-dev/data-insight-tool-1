@@ -38,7 +38,11 @@ export default function ContactSection() {
         body: JSON.stringify(data),
       });
 
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+
       if (!response.ok) {
+        console.error('Response not ok, status:', response.status);
         toast({
           title: 'Ошибка',
           description: 'Попробуйте позвонить нам.',
@@ -53,6 +57,7 @@ export default function ContactSection() {
       });
       e.currentTarget.reset();
     } catch (error) {
+      console.error('Fetch error:', error);
       toast({
         title: 'Ошибка',
         description: 'Попробуйте позвонить нам: +7 (992) 029-44-44',
