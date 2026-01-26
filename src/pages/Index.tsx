@@ -4,10 +4,10 @@ export default function Index() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b border-black">
         <div className="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
-          <a href="/" className="text-xl font-bold tracking-tighter">
+          <a href="/" className="text-base md:text-xl font-bold tracking-tighter">
             УПАКОВКА PRO
           </a>
-          <div className="flex space-x-8">
+          <div className="hidden md:flex space-x-8">
             <a href="#products" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
               Продукция
             </a>
@@ -18,6 +18,14 @@ export default function Index() {
               Контакты
             </a>
           </div>
+          <div className="md:hidden flex flex-col space-y-1">
+            <a href="#products" className="text-xs uppercase tracking-widest hover:text-red-600 transition-colors">
+              Продукция
+            </a>
+            <a href="#contact" className="text-xs uppercase tracking-widest hover:text-red-600 transition-colors">
+              Контакты
+            </a>
+          </div>
         </div>
       </nav>
 
@@ -25,12 +33,12 @@ export default function Index() {
       <section className="pt-32 pb-20 px-4 md:px-8 container mx-auto">
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-12 md:col-span-7 mb-8 md:mb-0">
-            <h1 className="text-7xl md:text-9xl font-bold tracking-tighter leading-none mb-6">
+            <h1 className="text-4xl sm:text-6xl md:text-9xl font-bold tracking-tighter leading-none mb-6">
               УПАКОВКА
               <br />
               ДЛЯ БИЗНЕСА
             </h1>
-            <p className="text-xl max-w-xl">
+            <p className="text-base sm:text-lg md:text-xl max-w-xl">
               Стретч. Скотч. Коробки. Надёжные упаковочные материалы для маркетплейсов, складов и логистики. Качество, которое защищает ваш товар.
             </p>
           </div>
@@ -45,7 +53,7 @@ export default function Index() {
       {/* Work Section */}
       <section id="products" className="py-20 px-4 md:px-8 bg-black text-white">
         <div className="container mx-auto">
-          <h2 className="text-6xl font-bold tracking-tighter mb-12">ПРОДУКЦИЯ</h2>
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tighter mb-8 md:mb-12">ПРОДУКЦИЯ</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Product 1 */}
@@ -89,13 +97,13 @@ export default function Index() {
         <div className="container mx-auto">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 md:col-span-5">
-              <h2 className="text-6xl font-bold tracking-tighter mb-8">О КОМПАНИИ</h2>
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tighter mb-6 md:mb-8">О КОМПАНИИ</h2>
               <div className="aspect-[4/5] bg-neutral-100 relative mb-8 md:mb-0">
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 border-2 border-black"></div>
               </div>
             </div>
             <div className="col-span-12 md:col-span-7 md:pt-24">
-              <p className="text-xl mb-6">
+              <p className="text-base sm:text-lg md:text-xl mb-6">
                 УПАКОВКА PRO — производитель и поставщик упаковочных материалов для бизнеса. Мы понимаем, что надежная упаковка — это защита товара, скорость логистики и доверие клиентов.
               </p>
               <p className="mb-6">
@@ -104,7 +112,7 @@ export default function Index() {
               <p className="mb-6">
                 Производим стретч-пленку, упаковочный скотч и гофрокартонные коробки. Работаем как с крупными партиями, так и с небольшими заказами. Доставка по России.
               </p>
-              <div className="grid grid-cols-2 gap-4 mt-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mt-8 md:mt-12">
                 <div>
                   <h3 className="text-sm uppercase tracking-widest mb-2">Преимущества</h3>
                   <ul className="space-y-2">
@@ -134,24 +142,24 @@ export default function Index() {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-6xl font-bold tracking-tighter mb-8">КОНТАКТЫ</h2>
-              <p className="text-xl mb-8">Нужна упаковка для вашего бизнеса? Оставьте заявку — рассчитаем стоимость и сроки.</p>
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tighter mb-6 md:mb-8">КОНТАКТЫ</h2>
+              <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8">Нужна упаковка для вашего бизнеса? Оставьте заявку — рассчитаем стоимость и сроки.</p>
               <div className="space-y-4">
-                <p className="flex items-center">
-                  <span className="w-24 text-sm uppercase tracking-widest">Почта</span>
+                <p className="flex flex-col sm:flex-row sm:items-center gap-2">
+                  <span className="w-24 text-xs sm:text-sm uppercase tracking-widest">Почта</span>
                   <a href="mailto:order@upakovkapro.ru" className="hover:underline">
                     order@upakovkapro.ru
                   </a>
                 </p>
-                <p className="flex items-center">
-                  <span className="w-24 text-sm uppercase tracking-widest">Телефон</span>
+                <p className="flex flex-col sm:flex-row sm:items-center gap-2">
+                  <span className="w-24 text-xs sm:text-sm uppercase tracking-widest">Телефон</span>
                   <a href="tel:+78001234567" className="hover:underline">
                     +7 (800) 123-45-67
                   </a>
                 </p>
-                <p className="flex items-center">
-                  <span className="w-24 text-sm uppercase tracking-widest">Адрес</span>
-                  <span>Производство и склад в Московской области</span>
+                <p className="flex flex-col sm:flex-row sm:items-center gap-2">
+                  <span className="w-24 text-xs sm:text-sm uppercase tracking-widest">Адрес</span>
+                  <span className="text-sm sm:text-base">Производство и склад в Московской области</span>
                 </p>
               </div>
             </div>
