@@ -44,9 +44,23 @@ export default function Index() {
               <br />
               ДЛЯ БИЗНЕСА
             </h1>
-            <p className="text-base sm:text-lg md:text-xl max-w-xl">
+            <p className="text-base sm:text-lg md:text-xl max-w-xl mb-8">
               Стретч. Скотч. Коробки. Надёжные упаковочные материалы для маркетплейсов, складов и логистики. Качество, которое защищает ваш товар.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a 
+                href="#contact" 
+                className="inline-block px-8 py-4 bg-[#4d7c3f] text-white text-sm uppercase tracking-widest hover:bg-[#d4772f] transition-colors text-center"
+              >
+                Получить прайс-лист
+              </a>
+              <a 
+                href="#products" 
+                className="inline-block px-8 py-4 border-2 border-[#4d7c3f] text-[#4d7c3f] text-sm uppercase tracking-widest hover:bg-[#4d7c3f] hover:text-white transition-colors text-center"
+              >
+                Наша продукция
+              </a>
+            </div>
           </div>
           <div className="col-span-12 md:col-span-5 flex items-center justify-center">
             <div className="relative w-full aspect-square overflow-hidden rounded-sm">
