@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS contact_requests (
+    id SERIAL PRIMARY KEY,
+    company VARCHAR(255) NOT NULL,
+    contact VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(50) DEFAULT 'new'
+);
