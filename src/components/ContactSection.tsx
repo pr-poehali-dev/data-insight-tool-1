@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import InputMask from 'react-input-mask';
 
 export default function ContactSection() {
   const { toast } = useToast();
@@ -11,9 +12,9 @@ export default function ContactSection() {
 
     const formData = new FormData(e.currentTarget);
     const data = {
-      company: formData.get('company') as string,
-      contact: formData.get('contact') as string,
-      message: formData.get('message') as string,
+      company: 'Заявка с сайта',
+      contact: formData.get('phone') as string,
+      message: 'Заявка на обратный звонок',
     };
 
     try {
@@ -79,50 +80,20 @@ export default function ContactSection() {
             </div>
           </div>
           <div>
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div>
-                <label htmlFor="company" className="block text-sm uppercase tracking-widest mb-2">
-                  Компания *
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  required
-                  placeholder="ООО «Ваша компания»"
-                  className="w-full px-4 py-3 bg-white text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-white"
-                />
-              </div>
-              <div>
-                <label htmlFor="contact" className="block text-sm uppercase tracking-widest mb-2">
-                  Контакты *
-                </label>
-                <input
-                  type="text"
-                  id="contact"
-                  name="contact"
-                  required
-                  placeholder="Email или телефон"
-                  className="w-full px-4 py-3 bg-white text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-white"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm uppercase tracking-widest mb-2">
-                  Запрос *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={4}
-                  placeholder="Опишите что нужно: объёмы, упаковочные материалы, сроки"
-                  className="w-full px-4 py-3 bg-white text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-white resize-none"
-                />
-              </div>
+            <p className="text-base sm:text-lg mb-6">Оставьте номер — перезвоним за 5 минут</p>
+            <form className="flex flex-col sm:flex-row gap-3 sm:gap-4" onSubmit={handleSubmit}>
+              <InputMask
+                mask="+7 (999) 999-99-99"
+                type="tel"
+                name="phone"
+                required
+                placeholder="+7 (___) ___-__-__"
+                className="flex-1 px-4 sm:px-6 py-3 sm:py-4 bg-white text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base"
+              />
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-8 py-4 bg-[#4d7c3f] text-white text-sm uppercase tracking-widest hover:bg-white hover:text-[#4d7c3f] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-[#4d7c3f] text-white text-xs sm:text-sm uppercase tracking-wider sm:tracking-widest hover:bg-white hover:text-[#4d7c3f] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
               >
                 {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
               </button>
