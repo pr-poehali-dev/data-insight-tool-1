@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import Calculator from '@/components/Calculator';
 
 export default function Index() {
   const { toast } = useToast();
@@ -105,10 +104,10 @@ export default function Index() {
             </p>
             <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 mb-8 sm:mb-10">
               <a 
-                href="#calculator" 
+                href="#contact" 
                 className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-[#4d7c3f] text-white text-xs sm:text-sm uppercase tracking-wider sm:tracking-widest hover:bg-[#d4772f] transition-colors text-center"
               >
-                Рассчитать стоимость
+                Получить прайс-лист
               </a>
               <a 
                 href="#products" 
@@ -367,9 +366,6 @@ export default function Index() {
           </div>
         </div>
       </section>
-
-      {/* Calculator Section */}
-      <Calculator />
 
       {/* About Section */}
       <section id="about" className="py-12 sm:py-16 md:py-20 px-4 md:px-8">
