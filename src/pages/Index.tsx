@@ -3,28 +3,34 @@ export default function Index() {
     <main className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b border-[#4d7c3f]">
-        <div className="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
-          <a href="/" className="flex items-center gap-3">
-            <img src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/bucket/bf020442-abe8-438c-a06a-ccd1f6b9281b.jpeg" alt="БазаУпаковки" className="h-8 md:h-10" />
-          </a>
-          <div className="hidden md:flex space-x-8">
-            <a href="#products" className="text-sm uppercase tracking-widest hover:text-[#d4772f] transition-colors">
-              Продукция
+        <div className="container mx-auto px-4 md:px-8 py-3 md:py-4">
+          <div className="flex justify-between items-center">
+            <a href="/" className="flex items-center">
+              <img 
+                src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/bucket/bf020442-abe8-438c-a06a-ccd1f6b9281b.jpeg" 
+                alt="БазаУпаковки" 
+                className="h-10 sm:h-12 md:h-14 w-auto object-contain" 
+              />
             </a>
-            <a href="#about" className="text-sm uppercase tracking-widest hover:text-[#d4772f] transition-colors">
-              О компании
-            </a>
-            <a href="#contact" className="text-sm uppercase tracking-widest hover:text-[#d4772f] transition-colors">
-              Контакты
-            </a>
-          </div>
-          <div className="md:hidden flex flex-col space-y-1">
-            <a href="#products" className="text-xs uppercase tracking-widest hover:text-[#d4772f] transition-colors">
-              Продукция
-            </a>
-            <a href="#contact" className="text-xs uppercase tracking-widest hover:text-[#d4772f] transition-colors">
-              Контакты
-            </a>
+            <div className="hidden md:flex space-x-8">
+              <a href="#products" className="text-sm uppercase tracking-widest hover:text-[#d4772f] transition-colors">
+                Продукция
+              </a>
+              <a href="#about" className="text-sm uppercase tracking-widest hover:text-[#d4772f] transition-colors">
+                О компании
+              </a>
+              <a href="#contact" className="text-sm uppercase tracking-widest hover:text-[#d4772f] transition-colors">
+                Контакты
+              </a>
+            </div>
+            <div className="md:hidden flex gap-4">
+              <a href="#products" className="text-xs uppercase tracking-wider hover:text-[#d4772f] transition-colors">
+                Продукция
+              </a>
+              <a href="#contact" className="text-xs uppercase tracking-wider hover:text-[#d4772f] transition-colors">
+                Контакты
+              </a>
+            </div>
           </div>
         </div>
       </nav>
