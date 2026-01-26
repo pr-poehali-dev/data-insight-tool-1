@@ -117,23 +117,35 @@ export default function Index() {
               </a>
             </div>
             
-            <div className="grid grid-cols-1 xs:grid-cols-3 gap-4 sm:gap-6 max-w-2xl">
-              <div className="flex items-start gap-3">
-                <div className="text-[#d4772f] text-2xl">⚡</div>
+            <div className="grid grid-cols-1 xs:grid-cols-3 gap-6 sm:gap-8 max-w-3xl">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4 flex items-center justify-center bg-[#d4772f] rounded-full">
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
                 <div>
                   <h3 className="font-bold text-sm sm:text-base mb-1">Быстрая доставка</h3>
                   <p className="text-xs sm:text-sm text-neutral-600">За 4 часа по Уфе</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="text-[#d4772f] text-2xl">📦</div>
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4 flex items-center justify-center bg-[#d4772f] rounded-full">
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                  </svg>
+                </div>
                 <div>
                   <h3 className="font-bold text-sm sm:text-base mb-1">Всегда в наличии</h3>
                   <p className="text-xs sm:text-sm text-neutral-600">Склад в Уфе</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="text-[#d4772f] text-2xl">💰</div>
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4 flex items-center justify-center bg-[#d4772f] rounded-full">
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
                 <div>
                   <h3 className="font-bold text-sm sm:text-base mb-1">Оптовые цены</h3>
                   <p className="text-xs sm:text-sm text-neutral-600">От производителя</p>
