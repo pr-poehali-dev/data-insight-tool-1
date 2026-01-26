@@ -128,48 +128,50 @@ export default function Index() {
       </section>
 
       {/* Work Section */}
-      <section id="products" className="py-12 sm:py-16 md:py-20 px-4 md:px-8 bg-[#4d7c3f] text-white">
-        <div className="container mx-auto">
+      <section id="products" className="py-12 sm:py-16 md:py-20 bg-[#4d7c3f] text-white overflow-hidden">
+        <div className="container mx-auto px-4 md:px-8">
           <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6 sm:mb-8 md:mb-12">ПРОДУКЦИЯ</h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {/* Product 1 */}
-            <div className="group">
-              <div className="aspect-square bg-white mb-4 overflow-hidden">
-                <img 
-                  src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/files/2d760fa7-a581-4ab5-9cca-0534d23ddcff.jpg" 
-                  alt="Стретч-пленка производство" 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
+          <div className="overflow-x-auto -mx-4 md:-mx-8 px-4 md:px-8">
+            <div className="flex gap-6 sm:gap-8 min-w-max lg:grid lg:grid-cols-3 lg:min-w-0">
+              {/* Product 1 */}
+              <div className="group w-[280px] sm:w-[320px] lg:w-auto flex-shrink-0">
+                <div className="aspect-square bg-white mb-4 overflow-hidden">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/files/2d760fa7-a581-4ab5-9cca-0534d23ddcff.jpg" 
+                    alt="Стретч-пленка производство" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Стретч-пленка</h3>
+                <p className="text-neutral-400">Промышленная и ручная. Прозрачная и черная. От 1 до 500 кг под заказ.</p>
               </div>
-              <h3 className="text-xl font-bold mb-2">Стретч-пленка</h3>
-              <p className="text-neutral-400">Промышленная и ручная. Прозрачная и черная. От 1 до 500 кг под заказ.</p>
-            </div>
 
-            {/* Product 2 */}
-            <div className="group">
-              <div className="aspect-square bg-white mb-4 overflow-hidden">
-                <img 
-                  src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/files/a6235816-183f-4e4b-93e2-e705bf2752ae.jpg" 
-                  alt="Скотч упаковочный" 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
+              {/* Product 2 */}
+              <div className="group w-[280px] sm:w-[320px] lg:w-auto flex-shrink-0">
+                <div className="aspect-square bg-white mb-4 overflow-hidden">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/files/a6235816-183f-4e4b-93e2-e705bf2752ae.jpg" 
+                    alt="Скотч упаковочный" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Скотч упаковочный</h3>
+                <p className="text-neutral-400">Прозрачный, цветной, с логотипом. Любые размеры для складов и маркетплейсов.</p>
               </div>
-              <h3 className="text-xl font-bold mb-2">Скотч упаковочный</h3>
-              <p className="text-neutral-400">Прозрачный, цветной, с логотипом. Любые размеры для складов и маркетплейсов.</p>
-            </div>
 
-            {/* Product 3 */}
-            <div className="group">
-              <div className="aspect-square bg-white mb-4 overflow-hidden">
-                <img 
-                  src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/files/b7ec4c96-b043-4e69-8bcf-d3928303830a.jpg" 
-                  alt="Картонные коробки" 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
+              {/* Product 3 */}
+              <div className="group w-[280px] sm:w-[320px] lg:w-auto flex-shrink-0">
+                <div className="aspect-square bg-white mb-4 overflow-hidden">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/files/b7ec4c96-b043-4e69-8bcf-d3928303830a.jpg" 
+                    alt="Картонные коробки" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Картонные коробки</h3>
+                <p className="text-neutral-400">Гофрокартон под любые товары. Стандартные и индивидуальные размеры.</p>
               </div>
-              <h3 className="text-xl font-bold mb-2">Картонные коробки</h3>
-              <p className="text-neutral-400">Гофрокартон под любые товары. Стандартные и индивидуальные размеры.</p>
             </div>
           </div>
         </div>
