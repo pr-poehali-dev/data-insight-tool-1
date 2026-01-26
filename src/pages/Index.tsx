@@ -65,9 +65,11 @@ export default function Index() {
             {/* Product 1 */}
             <div className="group">
               <div className="aspect-square bg-white mb-4 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center bg-neutral-100 group-hover:bg-[#d4772f] transition-colors duration-300">
-                  <span className="text-black text-8xl font-bold">01</span>
-                </div>
+                <img 
+                  src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/files/2d760fa7-a581-4ab5-9cca-0534d23ddcff.jpg" 
+                  alt="Стретч-пленка производство" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
               <h3 className="text-xl font-bold mb-2">Стретч-пленка</h3>
               <p className="text-neutral-400">Промышленная и ручная. Прозрачная и черная. От 1 до 500 кг под заказ.</p>
@@ -76,9 +78,11 @@ export default function Index() {
             {/* Product 2 */}
             <div className="group">
               <div className="aspect-square bg-white mb-4 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center bg-neutral-100 group-hover:bg-[#d4772f] transition-colors duration-300">
-                  <span className="text-black text-8xl font-bold">02</span>
-                </div>
+                <img 
+                  src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/files/a6235816-183f-4e4b-93e2-e705bf2752ae.jpg" 
+                  alt="Скотч упаковочный" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
               <h3 className="text-xl font-bold mb-2">Скотч упаковочный</h3>
               <p className="text-neutral-400">Прозрачный, цветной, с логотипом. Любые размеры для складов и маркетплейсов.</p>
@@ -87,9 +91,11 @@ export default function Index() {
             {/* Product 3 */}
             <div className="group">
               <div className="aspect-square bg-white mb-4 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center bg-neutral-100 group-hover:bg-[#d4772f] transition-colors duration-300">
-                  <span className="text-black text-8xl font-bold">03</span>
-                </div>
+                <img 
+                  src="https://cdn.poehali.dev/projects/159f7eb9-0961-46af-b214-32ed9420a8d0/files/b7ec4c96-b043-4e69-8bcf-d3928303830a.jpg" 
+                  alt="Картонные коробки" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
               <h3 className="text-xl font-bold mb-2">Картонные коробки</h3>
               <p className="text-neutral-400">Гофрокартон под любые товары. Стандартные и индивидуальные размеры.</p>
