@@ -3,10 +3,12 @@ export default function HeroSection() {
     <section className="pt-28 sm:pt-40 pb-12 sm:pb-20 px-4 md:px-8 container mx-auto">
       <div className="grid grid-cols-12 gap-4 md:gap-8">
         <div className="col-span-12 md:col-span-7 mb-6 md:mb-0">
-          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[8rem] font-bold tracking-tighter leading-[0.9] mb-4 sm:mb-6 break-words">
+          <h1 className="text-[clamp(2rem,8vw,8rem)] font-bold tracking-tighter leading-[0.9] mb-4 sm:mb-6 break-words hyphens-auto">
+            ОПТОВЫЙ
+            <br />
             СКЛАД
             <br />
-            РАСХОДНЫХ
+            УПАКОВОЧНЫХ
             <br />
             <span className="text-[#d4772f]">МАТЕРИАЛОВ</span>
           </h1>
